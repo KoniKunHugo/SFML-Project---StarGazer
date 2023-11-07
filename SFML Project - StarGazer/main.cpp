@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "gameObject.h"
+#include "iostream"
 
 int main(int argc, char** argv)
 {
@@ -10,15 +11,8 @@ int main(int argc, char** argv)
     //Création d'une fenêtre
     sf::RenderWindow oWindow(sf::VideoMode(1280, 720), "SFML");
 
-    sf::ConvexShape oConvex;
+    gameObject gO;
 
-    oConvex.setPointCount(5);
-
-    oConvex.setPoint(0, sf::Vector2f(0, 0));
-    oConvex.setPoint(1, sf::Vector2f(150, 10));
-    oConvex.setPoint(2, sf::Vector2f(120, 90));
-    oConvex.setPoint(3, sf::Vector2f(30, 100));
-    oConvex.setPoint(4, sf::Vector2f(0, 50));
     //Création d'un cercle de radius 100
     sf::CircleShape oCircle(10.f);
     //A la position 0, 0
@@ -33,6 +27,8 @@ int main(int argc, char** argv)
     oCircle.setPosition(100.f, 100.f);
     //Et de couleur rouge
     oRectangle.setFillColor(sf::Color::Red);
+
+    gO.createRectangle(100, 100);
 
     //GameLoop
     while (oWindow.isOpen())
@@ -52,7 +48,7 @@ int main(int argc, char** argv)
 
         oWindow.draw(oCircle);
         oWindow.draw(oRectangle);
-        oWindow.draw(oConvex);
+        oWindow.draw();
         oWindow.display();
     }
 
