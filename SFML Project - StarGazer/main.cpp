@@ -4,15 +4,9 @@
 
 int main(int argc, char** argv)
 {
-    /*gameObject gO;
-
-    gO.convexCoords();*/
-
     //Création d'une fenêtre
     sf::RenderWindow oWindow(sf::VideoMode(1280, 720), "SFML");
-
-    gameObject gO;
-
+    /**/
     //Création d'un cercle de radius 100
     sf::CircleShape oCircle(10.f);
     //A la position 0, 0
@@ -27,8 +21,6 @@ int main(int argc, char** argv)
     oCircle.setPosition(100.f, 100.f);
     //Et de couleur rouge
     oRectangle.setFillColor(sf::Color::Red);
-
-    gO.createRectangle(100, 100);
 
     //GameLoop
     while (oWindow.isOpen())
@@ -48,9 +40,6 @@ int main(int argc, char** argv)
 
         oWindow.draw(oCircle);
         oWindow.draw(oRectangle);
-        oWindow.draw();
         oWindow.display();
     }
-
-    return 0;
 }
