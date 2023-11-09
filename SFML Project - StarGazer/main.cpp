@@ -2,8 +2,41 @@
 #include "gameObject.h"
 #include "iostream"
 
-int main(int argc, char** argv)
+void Game()
 {
+    gameObject gORect(50, 50, 100, 100);
+
+    //Création d'une fenêtre
+    sf::RenderWindow oWindow(sf::VideoMode(1280, 720), "SFML");
+
+    //GameLoop
+    while (oWindow.isOpen())
+    {
+        //EVENT
+        sf::Event oEvent;
+        while (oWindow.pollEvent(oEvent))
+        {
+            if (oEvent.type == sf::Event::Closed)
+                oWindow.close();
+        }
+
+        //UPDATE
+
+        //DRAW
+        oWindow.clear();
+
+        //draw gORect
+
+        oWindow.display();
+    }
+}
+
+void Test()
+{
+    gameObject gORect(50, 50, 100, 100);
+
+    //gameObject gOCircle(10,10,50,50);
+
     //Création d'une fenêtre
     sf::RenderWindow oWindow(sf::VideoMode(1280, 720), "SFML");
     /**/
@@ -42,4 +75,9 @@ int main(int argc, char** argv)
         oWindow.draw(oRectangle);
         oWindow.display();
     }
+}
+
+int main(int argc, char** argv)
+{
+    Game();
 }

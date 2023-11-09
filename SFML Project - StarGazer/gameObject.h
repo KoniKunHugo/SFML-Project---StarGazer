@@ -1,21 +1,25 @@
 #pragma once
+#include "iostream"
+#include <SFML/Graphics.hpp>
 
 class gameObject
 {
 public:
 
-	void createRectangle(int x, int y);
-	void selectSize(int width, int height);
+	gameObject() {
+	}
 
-	gameObject();
-	~gameObject();
+	/*méthode 'Draw'*/
 
 private:
-
 	int x;
 	int y;
 	int width;
 	int height;
-	char graphic; //Cercle ou Rectangle
+
+	/*representation graphique*/ //=>RectangleShape
 
 };
+
+
+
