@@ -4,11 +4,10 @@
 
 void Game()
 {
-    gameObject gORect(50, 50, 100, 100);
-
+    GameObject gORect(50, 50, 100, 100);
     //Création d'une fenêtre
     sf::RenderWindow oWindow(sf::VideoMode(1280, 720), "SFML");
-
+    gORect.draw(oWindow);
     //GameLoop
     while (oWindow.isOpen())
     {
@@ -30,7 +29,7 @@ void Game()
         oWindow.display();
     }
 }
-
+/*
 void Test()
 {
     gameObject gORect(50, 50, 100, 100);
@@ -39,7 +38,6 @@ void Test()
 
     //Création d'une fenêtre
     sf::RenderWindow oWindow(sf::VideoMode(1280, 720), "SFML");
-    /**/
     //Création d'un cercle de radius 100
     sf::CircleShape oCircle(10.f);
     //A la position 0, 0
@@ -76,6 +74,7 @@ void Test()
         oWindow.display();
     }
 }
+*/
 
 int main(int argc, char** argv)
 {

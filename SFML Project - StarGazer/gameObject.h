@@ -2,14 +2,15 @@
 #include "iostream"
 #include <SFML/Graphics.hpp>
 
-class gameObject
+class GameObject
 {
 public:
 
-	gameObject() {
-	}
+	GameObject(int width, int height, int x, int y);
+
 
 	/*méthode 'Draw'*/
+	void draw(sf::RenderWindow& window, sf::RectangleShape& shape);
 
 private:
 	int x;
@@ -18,7 +19,7 @@ private:
 	int height;
 
 	/*representation graphique*/ //=>RectangleShape
-
+	sf::RectangleShape shape;
 };
 
 

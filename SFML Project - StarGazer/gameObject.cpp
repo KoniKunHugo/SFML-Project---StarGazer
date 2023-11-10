@@ -2,9 +2,14 @@
 #include "iostream"
 #include <SFML/Graphics.hpp>
 
-gameObject::gameObject(int width, int height, int x, int y) {
+GameObject::GameObject(int width, int height, int x, int y) {
 	this->x;
 	this->y;
 	this->width;
 	this->height;
+
+}
+
+void GameObject::draw(sf::RenderWindow& window, sf::RectangleShape& shape) {
+	window.draw(shape);
 }
