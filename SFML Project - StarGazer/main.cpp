@@ -4,10 +4,15 @@
 
 void Game()
 {
-    GameObject gORect(50, 50, 100, 100);
+    GameObject gORect(50.f, 50.f, 100.f, 100.f, sf::Color::Yellow);
+    GameObject gOCirc(100.f, 100.f, 100.f, sf::Color::Red);
     //Création d'une fenêtre
-    sf::RenderWindow oWindow(sf::VideoMode(1280, 720), "SFML");
-    gORect.draw(oWindow);
+    gORect.setRotation(35);
+    gORect.setPosition(170, 600);
+    gOCirc.setPosition(700, 350);
+    gORect.setDirection();
+    sf::RenderWindow oWindow(sf::VideoMode(1280, 720), "Casse brique");
+
     //GameLoop
     while (oWindow.isOpen())
     {
@@ -25,6 +30,8 @@ void Game()
         oWindow.clear();
 
         //draw gORect
+        gORect.drawShape(oWindow);
+        gOCirc.drawShape(oWindow);
 
         oWindow.display();
     }
