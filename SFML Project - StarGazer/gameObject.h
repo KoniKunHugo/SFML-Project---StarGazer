@@ -21,9 +21,9 @@ public:
 
 	void move(float fDeltaTime);
 
-	/*void checkCollisions(const GameObject& goOther);
+	void checkCollisions(const GameObject& gOOther);
 
-	void OnCollisionEnter();
+	/*void OnCollisionEnter();
 
 	void OnCollisionStay();
 
@@ -34,6 +34,10 @@ private:
 	float width;
 	float height;
 	float radius;
+	sf::Vector2f speedVector = sf::Vector2f(0, 0);
+	//Elements temporaire
+	sf::Clock clock;
+	float speed = 75.f;
 
 	/*representation graphique*/ //=>RectangleShape
 	sf::RectangleShape* shapeRect = NULL;

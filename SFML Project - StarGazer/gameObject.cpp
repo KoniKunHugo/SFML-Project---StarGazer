@@ -1,7 +1,6 @@
 #include "gameObject.h"
 #include "iostream"
 #include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
 
 GameObject::GameObject(float width, float height, float x, float y, sf::Color color)
 	: x(x), y(y), height(height), width(width), color(color)
@@ -11,7 +10,7 @@ GameObject::GameObject(float width, float height, float x, float y, sf::Color co
 	shapeRect->setPosition(x, y);
 	shapeRect->setFillColor(color);
 	shape = shapeRect;
-
+	speedVector = sf::Vector2f(1, 1);
 }
 
 GameObject::GameObject(float radius, float x, float y, sf::Color color)
@@ -53,5 +52,19 @@ void GameObject::setDirection(float fX, float fY)
 
 void GameObject::move(float fDeltaTime)
 {
+	sf::Vector2f curPos = shape->getPosition();
+	x = curPos.x;
+	y = curPos.y;
+	float newX = x + speed * fDeltaTime * speedVector.x;
+	float newY = y + speed * fDeltaTime * speedVector.y;
+	shape->setPosition(newX, newY);
+}
 
+void GameObject::checkCollisions(const GameObject& gOOther)
+{
+	sf::Vector2f curPos = shape->getPosition();
+	x = curPos.x;
+	y = curPos.y;
+	sf::Vector2f curPos2 = gOOther->getPosition();
+	if (x);
 }
