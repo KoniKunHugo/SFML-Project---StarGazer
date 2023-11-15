@@ -65,6 +65,11 @@ void GameObject::checkCollisions(const GameObject& gOOther)
 	sf::Vector2f curPos = shape->getPosition();
 	x = curPos.x;
 	y = curPos.y;
-	sf::Vector2f curPos2 = gOOther->getPosition();
+	sf::Vector2f curPos2 = gOOther.shape->getPosition();
 	if (x);
 }
+
+/*bool rect_overlap(GameObject& object1, GameObject& object2)
+{
+	return x < x2 + w2 && x1 + w1 > x2 && y1 < y2 + h2 && y1 + h1 > y2;
+}*/

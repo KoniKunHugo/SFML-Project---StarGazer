@@ -2,28 +2,24 @@
 #include "gameObject.h"
 #include "iostream"
 
-bool rect_overlap(GameObject& object1, GameObject& object2)
-{
-    return object1.x < x2 + w2 && x1 + w1 > x2 && y1 < y2 + h2 && y1 + h1 > y2;
-}
-
 void Game()
 {
     float elapsedTime;
     sf::Clock clock;
-    GameObject gORect(50.f, 50.f, 100.f, 100.f, sf::Color::Yellow);
-    GameObject gORect2(50.f, 50.f, 100.f, 100.f, sf::Color::Blue);
-    GameObject gOCirc(100.f, 100.f, 100.f, sf::Color::Red);
-    GameObject gOCirc2(10.f, 10.f, 10.f, sf::Color::Green);
+    GameObject gORect(100.f, 75.f, 600.f, 360.f, sf::Color::Yellow);
+    GameObject gORect2(50.f, 50.f, 333.f, 666.f, sf::Color::Blue);
+    GameObject gOCirc(20.f, 420.f, 240.f, sf::Color::Red);
+    GameObject gOCirc2(75.f, 10.f, 50.f, sf::Color::Green);
     //Création d'une fenêtre
-    gORect.setRotation(35);
+    gORect.setRotation(0);
     gORect.setDirection();
+    gOCirc.setDirection();
     sf::RenderWindow oWindow(sf::VideoMode(1280, 720), "Casse brique");
 
-    if (rect_overlap(gORect, gORect2))
-        printf("ca marche");
+    /*if (rect_overlap(gORect, gORect2))
+        printf("ca marche");*/
 
-    //GameLoop
+        //GameLoop
     while (oWindow.isOpen())
     {
         //EVENT
@@ -35,14 +31,17 @@ void Game()
         }
         //UPDATE
         elapsedTime = clock.restart().asSeconds();
-        gORect.move(elapsedTime);
+        gOCirc.move(elapsedTime);
+        //gORect.move(elapsedTime);
 
         //DRAW
         oWindow.clear();
 
         //draw gORect
         gORect.drawShape(oWindow);
+        gORect2.drawShape(oWindow);
         gOCirc.drawShape(oWindow);
+        gOCirc2.drawShape(oWindow);
 
         oWindow.display();
     }
