@@ -11,6 +11,6 @@ public:
 
 private:
 
-	int ball_speed;
+	float ball_speed;
 
 };

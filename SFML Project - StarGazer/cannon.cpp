@@ -2,11 +2,7 @@
 
 //Possibilité d'utilisation du Mouse Event pour récupérer la position du curseur 
 
-/*Cannon::Cannon() {
-
-}*/
-
-void Cannon::setOrientation() {
-
-}
-
+Cannon::Cannon() : GameObject(60, 40, 640, 650, sf::Color::Cyan)
+{
+	setRotation(-90);
+};
